@@ -37,6 +37,7 @@ const siteContent = {
   },
 };
 
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -44,13 +45,16 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 let nav = document.querySelectorAll('nav a')
-nav[0].textContent = siteContent['nav']['nav-item-1']
-nav[1].textContent = siteContent['nav']['nav-item-2']
-nav[2].textContent = siteContent['nav']['nav-item-3']
-nav[3].textContent = siteContent['nav']['nav-item-4']
-nav[4].textContent = siteContent['nav']['nav-item-5']
-nav[5].textContent = siteContent['nav']['nav-item-6']
+// nav[0].textContent = siteContent['nav']['nav-item-1']
+// nav[1].textContent = siteContent['nav']['nav-item-2']
+// nav[2].textContent = siteContent['nav']['nav-item-3']
+// nav[3].textContent = siteContent['nav']['nav-item-4']
+// nav[4].textContent = siteContent['nav']['nav-item-5']
+// nav[5].textContent = siteContent['nav']['nav-item-6']
 
+nav.forEach((e, index) => {
+  console.log(e.textContent = siteContent['nav'][`nav-item-${index +1}`])
+})
 
 
 let h1 = document.querySelector("h1");
@@ -90,9 +94,18 @@ let contacth4 = document.querySelector('.contact h4')
 contacth4.textContent = siteContent['contact']['contact-h4']
 
 let contactp = document.querySelectorAll('.contact p')
-contactp[0].textContent = siteContent['contact']['address']
-contactp[1].textContent = siteContent['contact']['phone']
-contactp[2].textContent = siteContent['contact']['email']
+// contactp[0].textContent = siteContent['contact']['address']
+// contactp[1].textContent = siteContent['contact']['phone']
+// contactp[2].textContent = siteContent['contact']['email']
+
+const keys = Object.values(siteContent['contact'])
+console.log(keys)
+
+//contactp[1].textContent = keys[1];
+
+for (let i = 0; i < contactp.length; i++) {
+    contactp[i].textContent = keys[i+1];
+  }
 
 
 
