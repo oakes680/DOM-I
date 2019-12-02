@@ -41,6 +41,8 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
+
 let nav = document.querySelectorAll('nav a')
 nav[0].textContent = siteContent['nav']['nav-item-1']
 nav[1].textContent = siteContent['nav']['nav-item-2']
@@ -48,6 +50,8 @@ nav[2].textContent = siteContent['nav']['nav-item-3']
 nav[3].textContent = siteContent['nav']['nav-item-4']
 nav[4].textContent = siteContent['nav']['nav-item-5']
 nav[5].textContent = siteContent['nav']['nav-item-6']
+
+
 
 let h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
@@ -121,3 +125,15 @@ parent.prepend(new2)
 
 //hello
 
+let button1 = document.createElement('button')
+button1.textContent = 'click me please'
+let hhh = document.querySelector('.cta-text')
+
+hhh.appendChild(button1)
+
+button1.addEventListener('click', function(e) {
+     button1.innerHTML = 'thanks'
+})
+
+
+console.log(siteContent['main-content']['services-h4'])
