@@ -107,10 +107,17 @@ let new2 = document.createElement('a')
 let parent = document.querySelector('nav')
 let parent2 = document.querySelector('nav')
 
-new1.textContent = 'hello';
+
+new1.innerHTML = 'hello';
 new2.textContent = 'Dog';
+//new1.href = '#'
+new1.setAttribute('href', '#')
+new2.href = '#'
+
 
 parent.appendChild(new1)
 
 parent.prepend(new2)
+
+//hello
 
